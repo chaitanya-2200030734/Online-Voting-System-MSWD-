@@ -1,0 +1,33 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --watch app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "auth": "^1.0.2",
+    "axios": "^1.6.7",
+    "b": "^2.0.1",
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "crypt": "^0.0.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.3",
+    "hbs": "^4.2.0",
+    "init": "^0.1.2",
+    "json": "^11.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.12.1",
+    "node": "^21.7.1",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

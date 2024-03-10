@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "mongoose": "^7.6.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.16.0",
+    "styled-components": "^6.1.0"
+  },
+  "name": "online-voting-system-mern-",
+  "description": "It is an online voting  system in which you can vote for your preferred party and live count of votes(total / each individual party) is shown.<br> <h1>Some features of this project</h1> 1.You have to be logged in to vote<br> 2.You cannot vote twice<br> 3.Used bcrypt to safeguard all the details of the user so that even the admin does not know who has voted <br>",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kapil4457/Online-Voting-System-MERN-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kapil4457/Online-Voting-System-MERN-/issues"
+  },
+  "homepage": "https://github.com/kapil4457/Online-Voting-System-MERN-#readme"
+}
