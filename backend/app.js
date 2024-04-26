@@ -4,9 +4,9 @@ const auth = require('./src/middlewares/auth');
 const bcrypt = require('bcrypt');
 require('./src/db/conn');
 const Register = require('./src/models/register');
-const app = express();
+const app = express('app');
 const hbs = require('hbs');
-const port = process.env.PORT || 8001;
+const port = process.env.PORT || 8004;
 const cookieParser = require('cookie-parser');
 const path = require('path');
 const cors = require('cors');
@@ -43,8 +43,8 @@ app.post('/register', async (req, res) => {
         } else {
             const token = await registerUser.generateAuthToken();
             const registered = await registerUser.save();
-            console.log('User Created Successfully');
-            res.status(201).json({ message: 'Registered Successfully' });
+            console.alert('User Created Successfully');
+            res.status(200).json({ message: 'Registered Successfully' });
         }
     } catch (e) {
         console.log(e.message);
@@ -69,7 +69,7 @@ app.post('/login', async (req, res) => {
         });
         if (isMatch) {
             console.log('Login Successful');
-            res.status(200).json({ message: 'Logged in' }); // Sending JSON response
+            res.status(200).json({ message: "Logged in" }); // Sending JSON response
         }
     } catch (e) {
         console.log(e.message);
@@ -85,7 +85,8 @@ app.get('/home', async (req, res) => {
         const aap = await Register.find({ voted: { $elemMatch: { party: 'aap' } } }).count();
         const ncp = await Register.find({ voted: { $elemMatch: { party: 'ncp' } } }).count();
         const inld = await Register.find({ voted: { $elemMatch: { party: 'inld' } } }).count();
-        res.status(200).json({ total, bjp, congress, aap, ncp, inld });
+        const nota = await Register.find({ voted: { $elemMatch: { party: 'nota' } } }).count();
+        res.status(200).json({ total, bjp, congress, aap, ncp, inld,nota });
     } catch (e) {
         console.log(e.message);
         res.status(500).send('Error fetching data');
@@ -102,7 +103,6 @@ app.get('/logout', auth, async (req, res) => {
         res.status(404).send('Login to access this page');
     }
 });
-
 app.post('/voterecording', auth, async (req, res) => {
     try {
         const aadhar = req.body.aadhar;
@@ -126,5 +126,5 @@ app.post('/voterecording', auth, async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Listening on port ${port}`);
+    console.log(`Listening on port ${port}`); // Use backticks and template literals
 });
