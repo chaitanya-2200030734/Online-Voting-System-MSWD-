@@ -1,3 +1,5 @@
+//Register.js
+
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
@@ -16,8 +18,8 @@ const Login = () => {
     const PostData = async (e) => {
         e.preventDefault();
         const { name, email, mobile, password, aadhar } = user;
-        
-        if (name === "" || email === "" || mobile === "" || password === "" || aadhar === "") {
+        if (name === "" || email === "" || mobile === "" || password === "" || aadhar === "") 
+        {
             alert('Fill in all the fields');
             history.push('/signup');
         } else {
@@ -34,7 +36,7 @@ const Login = () => {
 
                 const data = await res.json();
                 if (res.status === 422 || data) {
-                    window.alert("User already exists. Try logging in");
+                    window.alert("Registration successfull");
                     history.push('/signin');
                 } else {
                     window.alert("Registration Successful");
@@ -98,7 +100,6 @@ const Form = styled.div`
     box-shadow: 1px 1px 5px black;
     border: 2px solid black;
     padding: 2rem;
-
     /* Media queries for responsiveness */
     @media all and (max-width: 1236px) {
         width: 40%;
