@@ -86,6 +86,11 @@ const Vote = () => {
                   <td><img src="janasena.jpeg" alt="" /></td>
                   <td><label htmlFor="bjp">Jana Sena</label></td>
                 </tr>
+                <tr>
+                  <td><input type="radio" name="party" id="nota" value="nota" onClick={(e) => setVote(e.target.value)} /></td>
+                  <td><img src="nota.png" alt="" /></td>
+                  <td><label htmlFor="nota">NOTA</label></td>
+                </tr>
               </tbody>
             </table>
 
@@ -125,7 +130,6 @@ const Head = styled.div`
     font-size: 0.9rem;
   }
 `;
-
 const Note = styled.div``;
 
 const Main = styled.div`
@@ -169,4 +173,3 @@ const Parties = styled.div`
     }
   }
 `;
-
